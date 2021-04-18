@@ -1,7 +1,7 @@
 var storage = require("@azure/storage-blob")
 module.exports = async function (context, req) {
-    const accountname ="satestaestimostorage";
-    const key = "t991fbH0Gol54s/PI3mb2jswElwDH5GYOCbAdMM+QNSBwWdz3ZwwGf5ozUVZgtIRUBr5ZeGcHVTNp8roT9f1rg==";
+    const accountname = process.env.ACCOUNTNAME;
+    const key = process.env.KEY;
     const creds = new storage.StorageSharedKeyCredential(accountname,key);
     const containerName = "container-test-aestimo";
 
